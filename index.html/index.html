@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <title>Nova Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+    </div>
+
+
+    <!-- Main App -->
+    <main class="app">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <div class="brand">
+
+                <button
+                    class="brand-icon"
+                    id="scientificToggle"
+                    aria-label="Scientific calculator"
+                >
+                    ⌁
+                </button>
+
+                <div>
+                    <h1>Nova</h1>
+                    <span>Smart Calculator</span>
+                </div>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <button
+                    class="icon-btn"
+                    id="themeBtn"
+                    aria-label="Change theme"
+                >
+                    ☼
+                </button>
+
+                <button
+                    class="icon-btn"
+                    id="historyBtn"
+                    aria-label="Open history"
+                >
+                    ◷
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- Display -->
+        <section class="display">
+
+            <div class="display-top">
+
+                <span id="status">
+                    Ready
+                </span>
+
+                <span id="modeIndicator">
+                    DEG
+                </span>
+
+            </div>
+
+
+            <div
+                class="expression"
+                id="expression"
+            ></div>
+
+
+            <div
+                class="result"
+                id="result"
+            >
+                0
+            </div>
+
+
+            <div class="display-bottom">
+
+                <span id="memoryIndicator"></span>
+
+                <span id="answerPreview"></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Scientific Calculator -->
+        <section
+            class="scientific"
+            id="scientific"
+        >
+
+            <button data-scientific="sin">sin</button>
+            <button data-scientific="cos">cos</button>
+            <button data-scientific="tan">tan</button>
+            <button data-scientific="log">log</button>
+
+            <button data-scientific="ln">ln</button>
+            <button data-scientific="sqrt">√</button>
+            <button data-scientific="square">x²</button>
+            <button data-scientific="inverse">1/x</button>
+
+            <button data-scientific="factorial">x!</button>
+            <button data-scientific="pi">π</button>
+            <button data-scientific="e">e</button>
+
+            <button id="angleBtn">DEG</button>
+
+        </section>
+
+
+        <!-- Memory -->
+        <section class="memory-row">
+
+            <button data-memory="MC">MC</button>
+            <button data-memory="MR">MR</button>
+            <button data-memory="M+">M+</button>
+            <button data-memory="M-">M-</button>
+
+        </section>
+
+
+        <!-- Keypad -->
+        <section class="keypad">
+
+            <button
+                class="utility"
+                data-action="clear"
+            >
+                AC
+            </button>
+
+            <button
+                class="utility"
+                data-action="backspace"
+            >
+                ⌫
+            </button>
+
+            <button
+                class="utility"
+                data-action="percent"
+            >
+                %
+            </button>
+
+            <button
+                class="operator"
+                data-value="÷"
+            >
+                ÷
+            </button>
+
+
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+
+            <button
+                class="operator"
+                data-value="×"
+            >
+                ×
+            </button>
+
+
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+
+            <button
+                class="operator"
+                data-value="−"
+            >
+                −
+            </button>
+
+
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+
+            <button
+                class="operator"
+                data-value="+"
+            >
+                +
+            </button>
+
+
+            <button
+                class="utility"
+                data-action="sign"
+            >
+                ±
+            </button>
+
+            <button
+                class="zero"
+                data-value="0"
+            >
+                0
+            </button>
+
+            <button
+                class="utility"
+                data-action="decimal"
+            >
+                .
+            </button>
+
+            <button
+                class="equals"
+                data-action="calculate"
+            >
+                =
+            </button>
+
+        </section>
+
+
+        <!-- History -->
+        <aside
+            class="history-panel"
+            id="historyPanel"
+        >
+
+            <div class="history-header">
+
+                <div>
+                    <h2>History</h2>
+
+                    <span>
+                        Your calculations
+                    </span>
+                </div>
+
+
+                <button
+                    class="close-btn"
+                    id="closeHistory"
+                    aria-label="Close history"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div
+                class="history-list"
+                id="historyList"
+            ></div>
+
+
+            <button
+                class="clear-history"
+                id="clearHistory"
+            >
+                Clear History
+            </button>
+
+        </aside>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-line"></div>
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <span class="footer-logo">
+                    ⌁
+                </span>
+
+                <span>
+                    Nova Calculator
+                </span>
+
+            </div>
+
+
+            <p>
+                Smart calculations. Simple experience.
+            </p>
+
+
+            <div class="footer-creator">
+
+                Crafted with ♥ by
+
+                <strong>
+                    Muzammil Khan
+                </strong>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 Nova Calculator
+                </span>
+
+                <span>
+                    All rights reserved.
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
